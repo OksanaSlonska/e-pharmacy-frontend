@@ -1,0 +1,74 @@
+:root {
+  /* Основные цвета */
+  --white: #ffffff;
+  --black: #1d1e21;
+  --green: #59b17a;
+  --green-hover: #439261;
+  --background: #f7f8fa;
+
+  /* Цвета состояний (пригодятся для таблиц и статусов) */
+  --status-completed: #59b17a;
+  --status-confirmed: #805ad5;
+  --status-pending: #f6ad55;
+  --status-cancelled: #e53e3e;
+  --status-processing: #63b3ed;
+
+  /* Границы и тени */
+  --border-color: rgba(29, 30, 33, 0.1);
+  --error-color: #e85050;
+}
+
+/* 2. Сброс стандартных браузерных стилей (Reset) */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--black);
+  /* Используем системные шрифты, пока не подключим кастомные */
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background);
+    color: var(--black);
+  }
+}

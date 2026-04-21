@@ -1,0 +1,55 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--green);
+}
+
+.loginBtn {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 13px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 26px;
+  transition: background-color 0.2s;
+}
+
+.loginBtn:hover {
+  background-color: var(--green-hover);
+}
+
+.loginBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.errorText {
+  color: var(--error-color);
+  font-size: 12px;
+  padding-left: 18px;
+}
