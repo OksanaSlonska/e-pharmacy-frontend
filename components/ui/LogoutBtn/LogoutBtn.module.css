@@ -1,0 +1,27 @@
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--white);
+  border-radius: 50%;
+  background-color: var(--green);
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: var(--green-hover);
+}
+
+.logoutBtn:active {
+  transform: scale(0.96);
+}
+.icon {
+  width: 20px;
+  height: 20px;
+
+  fill: var(--white);
+}

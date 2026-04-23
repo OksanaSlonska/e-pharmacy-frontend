@@ -1,0 +1,65 @@
+.tableCard {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  height: 100%;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.customerList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.customerItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.email {
+  font-size: 12px;
+  color: #888;
+}
+
+.spent {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.viewAll {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  color: var(--green);
+  background: transparent;
+  border: 1px solid var(--green);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.viewAll:hover {
+  background-color: var(--green);
+  color: white;
+}
