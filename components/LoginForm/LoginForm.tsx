@@ -6,24 +6,53 @@ import { useRouter } from "next/navigation";
 import { loginSchema } from "@/utils/authSchema";
 import { clientApi } from "@/lib/api/clientApi";
 import styles from "./LoginForm.module.css";
+import { useAuthStore } from "@/store/authStore";
+import { LoginFormData } from "@/types";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 export const LoginForm = () => {
   const router = useRouter();
+  const setAuth = useAuthStore((state) => state.setAuth);
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm({
+  } = useForm<LoginFormData>({
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: LoginFormData) => {
     try {
-      await clientApi.post("/user/login", data);
-      router.push("/dashboard");
-    } catch (error: any) {
-      alert(error.response?.data?.message || "Login failed");
+      const response = await clientApi.post("/user/login", data);
+
+      const { token, user } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+
+        if (user) {
+          setAuth(user);
+        } else {
+          setAuth({
+            _id: "temporary-id",
+            name: "User",
+            email: data.email,
+            role: "admin",
+          });
+        }
+        toast.success("Welcome back!");
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const message =
+          error.response?.data?.message || "Invalid email or password";
+        toast.error(message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     }
   };
 

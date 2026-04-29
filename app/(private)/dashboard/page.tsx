@@ -1,18 +1,29 @@
-import { DashboardClient } from "./DashboardClient";
+import { Metadata } from "next";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { pharmacyKeys } from "@/hooks/usePharmacy";
+import { dashboardApi } from "@/lib/api/clientApi";
+import DashboardClient from "./DashboardClient";
 
-// Позже здесь будет реальный fetch данных с бэкенда
-async function getDashboardData() {
-  return {
-    stats: [
-      { id: 1, title: "All products", count: "8,400", icon: "icon-products" },
-      { id: 2, title: "All suppliers", count: "2,120", icon: "icon-suppliers" },
-      { id: 3, title: "All customers", count: "140", icon: "icon-customers" },
-    ],
-  };
-}
+export const metadata: Metadata = { title: "Dashboard | E-Pharmacy" };
 
 export default async function DashboardPage() {
-  const data = await getDashboardData();
+  const queryClient = new QueryClient();
 
-  return <DashboardClient initialData={data} />;
+  await queryClient.prefetchQuery({
+    queryKey: pharmacyKeys.dashboard,
+    queryFn: async () => {
+      const { data } = await dashboardApi.get();
+      return data;
+    },
+  });
+
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <DashboardClient />
+    </HydrationBoundary>
+  );
 }

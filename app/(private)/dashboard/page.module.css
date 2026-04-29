@@ -4,28 +4,25 @@
   gap: 40px;
 }
 
-/* Карточки статистики */
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* Мобилка */
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
 }
 
-/* Основной контент (Таблицы) */
 .mainGrid {
   display: grid;
-  grid-template-columns: 1fr; /* Мобилка */
+  grid-template-columns: 1fr;
   gap: 20px;
   align-items: flex-start;
 }
 
-/* Адаптив для десктопа (1440px) */
 @media screen and (min-width: 1440px) {
   .statsGrid {
-    grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .mainGrid {
-    grid-template-columns: 2fr 1fr; /* Левая часть в 2 раза шире правой */
+    grid-template-columns: 2fr 1fr;
   }
 }

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "res.cloudinary.com", // или другой домен
+        hostname: "i.imgur.com", // или другой домен
       },
     ],
   },

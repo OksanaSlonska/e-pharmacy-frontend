@@ -17,6 +17,7 @@ export default function LoginPage() {
           alt="decoration"
           width={300}
           height={300}
+          style={{ height: "auto", width: "auto" }}
         />
       </div>
 
@@ -24,7 +25,7 @@ export default function LoginPage() {
         <section className={styles.heroSection}>
           <div className={styles.logo}>
             <Image
-              src="images/logo.svg"
+              src="/images/logo.svg"
               alt="Logo"
               width={32}
               height={32}

@@ -1,0 +1,68 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1e21;
+}
+
+.plusIconWrapper {
+  background-color: #59b17a;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.addButton:hover .plusIconWrapper {
+  background-color: #4a9466;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editBtn {
+  color: #59b17a;
+}
+.editBtn:hover {
+  border-color: #59b17a;
+  background: #f6fbf8;
+}
+
+.deleteBtn {
+  color: #e85050;
+}
+.deleteBtn:hover {
+  border-color: #e85050;
+  background: #fef6f6;
+}

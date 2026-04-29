@@ -1,6 +1,7 @@
 import { NavigationProvider } from "@/providers/NavigationProvider";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { Header } from "@/components/Header/Header";
+import { Toaster } from "react-hot-toast";
 import styles from "./layout.module.css";
 
 export default function PrivateLayout({
@@ -10,8 +11,8 @@ export default function PrivateLayout({
 }) {
   return (
     <NavigationProvider>
+      <Toaster position="top-right" reverseOrder={false} />
       <div className={styles.pageWrapper}>
-       
         <Header />
 
         <div className={styles.mainLayout}>

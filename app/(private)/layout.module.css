@@ -1,20 +1,20 @@
 .pageWrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* ГОВОРИМ: Высота ровно на весь экран */
-  overflow: hidden; /* ГОВОРИМ: Сама страница не должна скроллиться */
+  height: 100vh;
+  overflow: hidden;
 }
 
 .mainLayout {
   display: flex;
-  flex: 1; /* Занимает всё пространство от хедера до низа */
-  align-items: stretch; /* ГАРАНТИРУЕТ: Сайдбар и Контент всегда одной высоты */
-  min-height: 0; /* Технический фикс для flex-контейнеров */
+  flex: 1;
+  align-items: stretch;
+  min-height: 0;
 }
 
 .content {
   flex: 1;
   padding: 24px;
   background-color: #f7f8fa;
-  overflow-y: auto; /* ТЕПЕРЬ СКРОЛЛ БУДЕТ ТУТ, а не у всей страницы */
+  overflow-y: auto;
 }

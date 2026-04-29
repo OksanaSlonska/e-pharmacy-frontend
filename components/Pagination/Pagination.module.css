@@ -1,0 +1,28 @@
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.pageDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.pageDot.active {
+  background-color: #59b17a;
+  transform: scale(1.2);
+
+  .pageDot:hover:not(.active) {
+    background-color: #c0c0c0;
+  }
+}
