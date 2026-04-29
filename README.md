@@ -4,7 +4,7 @@ A robust and scalable administrative dashboard developed for pharmaceutical busi
 
 ## 🚀 Live Demo
 
-**Link:**
+**Link:** https://e-pharmacy-frontend-five.vercel.app/
 
 ---
 
